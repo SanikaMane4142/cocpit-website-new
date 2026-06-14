@@ -1,45 +1,47 @@
 "use client";
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const WaitlistModal = ({ onClose }: { onClose: () => void }) => {
-  const [email, setEmail] = useState('');
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
-  const [message, setMessage] = useState('');
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [isMounted, setIsMounted] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('loading');
-    setMessage('');
+  useEffect(() => {
+    setIsMounted(true);
+    const targetDate = new Date('2026-06-28T00:00:00').getTime();
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
 
-    try {
-      const res = await fetch('/api/waitlist', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      });
-      const data = await res.json();
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((difference % (1000 * 60)) / 1000),
+        });
+      }
+    };
 
-      if (!res.ok) throw new Error(data.message || 'Failed to join waitlist');
+    updateCountdown();
+    const timerId = setInterval(updateCountdown, 1000);
+    return () => clearInterval(timerId);
+  }, []);
 
-      setStatus('success');
-      setMessage(data.message || 'Successfully joined the waitlist!');
-      setEmail('');
-    } catch (err: any) {
-      setStatus('error');
-      setMessage(err.message || 'Something went wrong');
-    }
-  };
+  if (!isMounted) return null;
 
   return (
     <div className="fixed inset-0 z-50 flex justify-center items-center bg-black/60 backdrop-blur-sm px-4" onClick={onClose}>
       <div
-        className="w-full max-w-[448px] p-6 bg-[#1c1c1c] rounded-xl border border-gray-500 flex flex-col justify-start items-center shadow-2xl"
+        className="w-full max-w-[448px] p-8 bg-[#1c1c1c] rounded-2xl border border-gray-700 flex flex-col justify-start items-center shadow-2xl relative overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="w-full inline-flex justify-between items-center mb-6">
-          <div className="text-white text-2xl font-medium leading-8">Join the Waitlist</div>
+        {/* Glow effect */}
+        <div className="absolute -top-24 -right-24 w-48 h-48 bg-indigo-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div className="w-full inline-flex justify-between items-center mb-6 relative z-10">
+          <div className="text-white text-xl md:text-2xl font-medium leading-8 font-sans">Registrations Opening Soon</div>
           <button onClick={onClose} className="w-6 h-6 flex justify-center items-center hover:opacity-70 transition-opacity">
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1 1L13 13M1 13L13 1" stroke="white" strokeWidth="2" strokeLinecap="round" />
@@ -47,35 +49,41 @@ const WaitlistModal = ({ onClose }: { onClose: () => void }) => {
           </button>
         </div>
 
-        <form onSubmit={handleSubmit} className="w-full flex flex-col gap-4">
-          <div className="w-full flex flex-col gap-2">
-            <label className="text-white text-sm font-normal">Email Address*</label>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="name@example.com"
-              required
-              className="w-full h-12 p-3 bg-transparent rounded-xl border border-gray-500 text-white placeholder:text-gray-500 text-sm focus:outline-none focus:border-indigo-500 transition-colors"
-            />
-          </div>
+        <div className="w-full text-gray-400 text-sm md:text-base text-center mb-8 font-sans relative z-10">
+          We are getting things ready for you. Mark your calendars for June 28th!
+        </div>
 
-          {message && (
-            <div className={`text-sm ${status === 'success' ? 'text-green-400' : 'text-red-400'}`}>
-              {message}
+        {/* Mini Countdown */}
+        <div className="flex justify-center items-center gap-2 md:gap-4 w-full relative z-10">
+          <div className="flex flex-col items-center">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#2a2a2a] rounded-xl flex justify-center items-center text-xl sm:text-2xl font-semibold text-white font-sans border border-gray-600">
+              {timeLeft.days.toString().padStart(2, '0')}
             </div>
-          )}
+            <div className="mt-2 text-[10px] font-medium text-gray-500 uppercase tracking-widest">Days</div>
+          </div>
+          <div className="text-lg sm:text-xl font-medium text-gray-500 pb-5">:</div>
+          <div className="flex flex-col items-center">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#2a2a2a] rounded-xl flex justify-center items-center text-xl sm:text-2xl font-semibold text-white font-sans border border-gray-600">
+              {timeLeft.hours.toString().padStart(2, '0')}
+            </div>
+            <div className="mt-2 text-[10px] font-medium text-gray-500 uppercase tracking-widest">Hours</div>
+          </div>
+          <div className="text-lg sm:text-xl font-medium text-gray-500 pb-5">:</div>
+          <div className="flex flex-col items-center">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#2a2a2a] rounded-xl flex justify-center items-center text-xl sm:text-2xl font-semibold text-white font-sans border border-gray-600">
+              {timeLeft.minutes.toString().padStart(2, '0')}
+            </div>
+            <div className="mt-2 text-[10px] font-medium text-gray-500 uppercase tracking-widest">Mins</div>
+          </div>
+          <div className="text-lg sm:text-xl font-medium text-gray-500 pb-5">:</div>
+          <div className="flex flex-col items-center">
+            <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#2a2a2a] rounded-xl flex justify-center items-center text-xl sm:text-2xl font-semibold text-white font-sans border border-gray-600">
+              {timeLeft.seconds.toString().padStart(2, '0')}
+            </div>
+            <div className="mt-2 text-[10px] font-medium text-gray-500 uppercase tracking-widest">Secs</div>
+          </div>
+        </div>
 
-          <button
-            type="submit"
-            disabled={status === 'loading'}
-            className="w-full h-12 mt-2 px-3 py-3 bg-[#818cf8] hover:bg-indigo-400 disabled:bg-gray-600 transition-colors rounded-xl flex justify-center items-center"
-          >
-            <span className="text-white text-base font-normal">
-              {status === 'loading' ? 'Submitting...' : 'Join Waitlist'}
-            </span>
-          </button>
-        </form>
       </div>
     </div>
   );

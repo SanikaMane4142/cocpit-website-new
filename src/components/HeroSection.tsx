@@ -108,18 +108,7 @@ export const HeroSection = () => {
             </div>
           </div>
 
-          {/* Description Moved Below the Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7 }}
-            className="w-full max-w-[340px] border-l-2 border-indigo-500 pl-4 mt-8 self-start ml-2 sm:mx-auto"
-          >
-            <h2 className="text-black font-medium text-lg mb-2">One Platform. <span className="text-indigo-500">Unlimited Growth.</span></h2>
-            <p className="text-sm font-normal text-gray-500 leading-snug">
-              Cocpit unifies professional networking, AI intelligence, recruitment, and business infrastructure into one platform that works alongside you to create opportunities and drive success.
-            </p>
-          </motion.div>
+
         </div>
       </section>
 
