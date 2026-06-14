@@ -1,13 +1,14 @@
+"use client";
 import React, { useState } from 'react';
 
 const ApplicationModal = ({ title, onClose }: { title: string, onClose: () => void }) => {
   return (
-    <div className="fixed inset-0 z-50 flex justify-center items-center bg-black/60 backdrop-blur-sm" onClick={onClose}>
+    <div className="fixed inset-0 z-50 flex justify-center items-center bg-black/60 backdrop-blur-sm px-4" onClick={onClose}>
       <div
-        className="p-7 bg-[#1c1c1c] rounded-xl border border-gray-500 inline-flex justify-center items-center gap-2.5"
+        className="w-full max-w-[448px] p-5 md:p-7 bg-[#1c1c1c] rounded-xl border border-gray-500 flex flex-col justify-center items-center gap-2.5 max-h-[90vh] overflow-y-auto shadow-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="w-[448px] inline-flex flex-col justify-start items-start gap-6">
+        <div className="w-full flex flex-col justify-start items-start gap-6">
 
           {/* Header */}
           <div className="w-full inline-flex justify-between items-center">
@@ -100,7 +101,7 @@ const JobCard = ({ title, details, description, onApply }: { title: string, deta
   );
 };
 
-export const Careers = () => {
+export default function Careers() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedJob, setSelectedJob] = useState("");
 
@@ -144,9 +145,9 @@ What We’re Looking For:
 
         {/* Header Section */}
         <div className="w-full px-6 flex flex-col justify-start items-center gap-2 mb-8 lg:mb-20 mt-10 lg:mt-0">
-          <div className="self-stretch text-center justify-center text-black text-2xl lg:text-4xl font-medium font-['Poppins'] leading-8 lg:leading-10">
+          <h1 className="self-stretch text-center justify-center text-black text-2xl lg:text-4xl font-medium font-['Poppins'] leading-8 lg:leading-10">
             Join The Execution Layer
-          </div>
+          </h1>
           <div className="self-stretch text-center justify-center text-zinc-600 text-sm lg:text-2xl font-normal font-['Poppins'] leading-5 lg:leading-8">
             Help build the intelligent infrastructure powering Cocpit.
           </div>

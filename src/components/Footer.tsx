@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 export const Footer = () => {
   return (
@@ -26,19 +26,25 @@ export const Footer = () => {
               <div className="flex flex-col justify-start items-start gap-4 lg:gap-5">
                 <div className="text-black text-base lg:text-lg font-semibold font-['Poppins'] leading-5">Company</div>
                 <div className="w-28 lg:w-auto flex flex-col justify-start items-start gap-2 lg:gap-5">
-                  <Link to="/" className="text-gray-500 hover:text-indigo-500 text-sm lg:text-base font-normal font-['Poppins'] leading-5 transition-colors">Home</Link>
-                  <Link to="/about" className="text-gray-500 hover:text-indigo-500 text-sm lg:text-base font-normal font-['Poppins'] leading-5 transition-colors">About</Link>
-                  <Link to="/careers" className="text-gray-500 hover:text-indigo-500 text-sm lg:text-base font-normal font-['Poppins'] leading-5 transition-colors">Careers</Link>
-                  <Link to="/features" className="text-gray-500 hover:text-indigo-500 text-sm lg:text-base font-normal font-['Poppins'] leading-5 transition-colors">Features</Link>
+                  <Link href="/" className="text-gray-500 hover:text-indigo-500 text-sm lg:text-base font-normal font-['Poppins'] leading-5 transition-colors">Home</Link>
+                  <Link href="/about" className="text-gray-500 hover:text-indigo-500 text-sm lg:text-base font-normal font-['Poppins'] leading-5 transition-colors">About</Link>
+                  <Link href="/careers" className="text-gray-500 hover:text-indigo-500 text-sm lg:text-base font-normal font-['Poppins'] leading-5 transition-colors">Careers</Link>
+                  <Link href="/features" className="text-gray-500 hover:text-indigo-500 text-sm lg:text-base font-normal font-['Poppins'] leading-5 transition-colors">Features</Link>
                 </div>
               </div>
 
-              {/* Right Links */}
+              {/* Right Links and Location */}
               <div className="flex flex-col justify-start items-start gap-4 lg:gap-5">
                 <div className="text-black text-base lg:text-lg font-semibold font-['Poppins'] leading-5">Legal</div>
                 <div className="w-28 lg:w-auto flex flex-col justify-start items-start gap-2 lg:gap-5">
                   <a href="#" className="text-gray-500 hover:text-indigo-500 text-sm lg:text-base font-normal font-['Poppins'] leading-5 transition-colors">Privacy Policy</a>
                   <a href="#" className="text-gray-500 hover:text-indigo-500 text-sm lg:text-base font-normal font-['Poppins'] leading-5 transition-colors">Terms of Service</a>
+                </div>
+                <div className="text-black text-base lg:text-lg font-semibold font-['Poppins'] leading-5 mt-2 lg:mt-4">Location</div>
+                <div className="text-gray-500 text-sm lg:text-base font-normal font-['Poppins'] leading-5 lg:leading-7 max-w-[400px]">
+                  Ratnamani Green Emerald Building,
+                  Mangalwar Peth, Race course Naka,
+                  C Ward, Kolhapur, Maharashtra
                 </div>
               </div>
             </div>

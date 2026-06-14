@@ -1,3 +1,4 @@
+"use client";
 import { motion } from 'framer-motion';
 import { Users, Network, Briefcase, TrendingUp } from 'lucide-react';
 

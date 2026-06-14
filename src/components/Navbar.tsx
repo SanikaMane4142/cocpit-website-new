@@ -1,7 +1,9 @@
-import { Link, useLocation } from 'react-router-dom';
+"use client";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export const Navbar = () => {
-  const location = useLocation();
+  const pathname = usePathname();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 w-full flex justify-center pointer-events-auto bg-white/80 backdrop-blur-md border-b border-white/20">
@@ -9,7 +11,7 @@ export const Navbar = () => {
 
         {/* Logo */}
         <div className="flex items-center h-8 md:h-full">
-          <Link to="/" className="flex items-center">
+          <Link href="/" className="flex items-center">
             <img src="/image%206.svg" alt="Cocpit Logo" className="h-6 md:h-11 w-auto invert" />
           </Link>
         </div>
@@ -20,13 +22,13 @@ export const Navbar = () => {
             {[
               { name: 'Home', path: '/' },
               { name: 'About', path: '/about' },
-              { name: 'Careers', path: '/careers' },
-              { name: 'Features', path: '/features' }
+              { name: 'Features', path: '/features' },
+              { name: 'Careers', path: '/careers' }
             ].map((item) => (
               <Link
                 key={item.name}
-                to={item.path}
-                className={`text-center flex justify-center items-center transition-colors pb-1 md:pb-4 border-b-[1.5px] md:border-b-2 mt-0 md:mt-4 ${location.pathname === item.path
+                href={item.path}
+                className={`text-center flex justify-center items-center transition-colors pb-1 md:pb-4 border-b-[1.5px] md:border-b-2 mt-0 md:mt-4 ${pathname === item.path
                     ? 'border-indigo-500 text-indigo-500 font-medium'
                     : 'border-transparent text-black font-normal hover:text-indigo-500'
                   } text-[11px] sm:text-[13px] md:text-base font-['Poppins']`}

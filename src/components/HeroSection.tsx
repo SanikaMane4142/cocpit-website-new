@@ -1,3 +1,4 @@
+"use client";
 import { motion } from 'framer-motion';
 import { ThumbsUp, MessageSquare, Repeat2, Share, Bell, MoreVertical, UserPlus } from 'lucide-react';
 import { cn } from '../lib/utils';
@@ -29,6 +30,14 @@ export const HeroSection = () => {
             >
               Welcome To <span className="capitalize">C</span><span className="lowercase">OCPIT</span>
             </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.05 }}
+              className="text-lg font-medium text-indigo-500 leading-tight mt-1"
+            >
+              Turn Vision into Reality
+            </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -120,12 +129,13 @@ export const HeroSection = () => {
 
           {/* Header Text */}
           <div className="w-[629px] left-[406px] top-[172px] absolute inline-flex flex-col justify-center items-center gap-2">
-            <div className="self-stretch text-center justify-end">
+            <h1 className="self-stretch text-center justify-end">
               <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-black text-6xl font-medium font-['Poppins'] leading-[83.20px]">Welcome To </motion.span>
               <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-black text-6xl font-medium font-['Poppins'] capitalize leading-[83.20px]">C</motion.span>
               <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-black text-6xl font-medium font-['Poppins'] lowercase leading-[83.20px]">OCPIT</motion.span>
-            </div>
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="self-stretch text-center justify-center text-gray-500 text-lg font-normal font-['Poppins'] leading-6">The next-generation professional networking platform.</motion.div>
+            </h1>
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }} className="self-stretch text-center justify-center text-indigo-500 text-2xl font-medium font-['Poppins'] leading-8 mt-1">Turn Vision into Reality</motion.div>
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="self-stretch text-center justify-center text-gray-500 text-lg font-normal font-['Poppins'] leading-6 mt-1">The next-generation professional networking platform.</motion.div>
           </div>
 
           {/* Left Text */}

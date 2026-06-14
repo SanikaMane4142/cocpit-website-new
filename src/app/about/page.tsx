@@ -1,3 +1,4 @@
+"use client";
 import { useState } from 'react';
 
 const Testimonial = () => (
@@ -84,10 +85,10 @@ const FullTeamSection = () => {
 
             {/* Header */}
             <div className="w-full max-w-[1440px] flex flex-col justify-center items-center gap-2 lg:gap-10">
-                <div className="text-center">
+                <h2 className="text-center">
                     <span className="text-black text-2xl lg:text-4xl font-medium font-['Poppins'] leading-8 lg:leading-10">Meet the Team Behind </span>
                     <span className="text-indigo-500 text-2xl lg:text-4xl font-medium font-['Poppins'] leading-8 lg:leading-10">Cocpit</span>
-                </div>
+                </h2>
                 <div className="text-center text-gray-500 text-sm lg:text-lg font-normal font-['Poppins'] leading-5 lg:leading-6 max-w-sm lg:max-w-none">
                     Building the future of AI-powered networking and professional growth.
                 </div>
@@ -139,10 +140,10 @@ const AboutInfo = () => (
     <section className="py-10 lg:py-24 relative flex flex-col justify-center items-center gap-10 px-6 lg:px-0">
 
         <div className="w-full max-w-[1440px] lg:px-32 flex flex-col justify-center items-center gap-2 lg:gap-4">
-            <div className="text-center">
+            <h1 className="text-center">
                 <span className="text-black text-2xl lg:text-4xl font-medium font-['Poppins'] leading-8 lg:leading-10">About </span>
                 <span className="text-indigo-500 text-2xl lg:text-4xl font-medium font-['Poppins'] leading-8 lg:leading-10">Cocpit</span>
-            </div>
+            </h1>
             <div className="w-full max-w-sm lg:max-w-[822px] text-center text-zinc-600 text-sm lg:text-lg font-normal font-['Poppins'] leading-5 lg:leading-6">
                 Cocpit is the next-generation professional networking platform where students, professionals, businesses, and innovators connect, collaborate, and grow in the digital age.
             </div>
@@ -225,7 +226,7 @@ const AboutInfo = () => (
     </section>
 );
 
-export const About = () => {
+export default function About() {
     return (
         <main className="relative overflow-hidden min-h-screen">
             <Testimonial />
