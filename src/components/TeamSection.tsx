@@ -17,12 +17,12 @@ const allMembers = [
 
 export const TeamSection = () => {
   const infiniteMembers = [...allMembers, ...allMembers, ...allMembers];
-  const [currentIndex, setCurrentIndex] = useState(allMembers.length + 1); // Start at Yash (index 13 + 1 to show Yash centered if we want, or just start at index 14. Wait, Yash is index 13.
+  const [currentIndex, setCurrentIndex] = useState(allMembers.length + 1);
   const [isTransitioning, setIsTransitioning] = useState(true);
+  const [isMounted, setIsMounted] = useState(false);
 
-  // Correct starting index: Yash is allMembers.length. We usually start at allMembers.length + 1 to center the second item?
-  // Previous code had useState(1). So let's use allMembers.length + 1
   React.useEffect(() => {
+    setIsMounted(true);
     setCurrentIndex(allMembers.length + 1);
   }, []);
 
@@ -150,7 +150,7 @@ export const TeamSection = () => {
             <div className="min-w-max lg:w-full lg:h-full flex items-center relative">
               <div 
                 className={`flex items-center gap-4 lg:gap-[50px] lg:absolute lg:left-0 ${isTransitioning ? 'transition-transform duration-500 ease-in-out' : ''}`}
-                style={{ transform: typeof window !== 'undefined' && window.innerWidth >= 1024 ? `translateX(${(1 - currentIndex) * 375}px)` : 'none' }} 
+                style={{ transform: isMounted && window.innerWidth >= 1024 ? `translateX(${(1 - currentIndex) * 375}px)` : 'none' }} 
               >
                 {infiniteMembers.map((m, idx) => (
                   <MemberCard key={`${m.name}-${idx}`} member={m} index={idx} />

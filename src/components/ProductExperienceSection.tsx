@@ -43,14 +43,14 @@ export const ProductExperienceSection = () => {
             {/* Desktop Image */}
             <img 
               className="hidden lg:block order-2 lg:order-1 max-w-[1132px] w-full h-[736px] object-cover rounded-xl shadow-[0px_0px_50px_0px_rgba(255,255,255,0.25)] border border-[#B7B7B7]" 
-              src={heroImage} 
+              src={heroImage.src} 
               alt="Interactive Product Experience Desktop" 
             />
             
             {/* Mobile Image */}
             <img 
               className="lg:hidden order-2 lg:order-1 w-72 h-[659px] object-cover rounded-xl shadow-[0px_0px_50px_0px_rgba(255,255,255,0.25)] border border-[#B7B7B7]" 
-              src={heroImageMobile} 
+              src={heroImageMobile.src} 
               alt="Interactive Product Experience Mobile" 
             />
             
