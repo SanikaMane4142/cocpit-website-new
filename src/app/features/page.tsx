@@ -2,15 +2,15 @@ import React from 'react';
 
 const FeatureBlock = ({ title, description, items }: { title: React.ReactNode, description: React.ReactNode, items?: string[] }) => (
   <div className="w-full flex flex-col lg:flex-row justify-center lg:justify-start items-center lg:items-start gap-4 lg:gap-10 py-0 lg:py-12">
-    <h2 className="w-full lg:w-96 text-center lg:text-left text-base lg:text-3xl font-medium font-['Poppins'] leading-5 lg:leading-10 text-zinc-950">
+    <h2 className="w-full lg:w-96 text-center lg:text-left text-base lg:text-3xl font-medium font-sans leading-5 lg:leading-10 text-zinc-950">
       {title}
     </h2>
     <div className="w-full lg:flex-1 flex flex-col justify-center lg:justify-start items-center lg:items-start gap-4 lg:gap-6">
-      <div className="w-full max-w-[320px] lg:max-w-none text-center lg:text-left text-zinc-600 text-sm lg:text-base font-normal font-['Poppins'] leading-5">
+      <div className="w-full max-w-[320px] lg:max-w-none text-center lg:text-left text-zinc-600 text-sm lg:text-base font-normal font-sans leading-5">
         {description}
       </div>
       {items && items.length > 0 && (
-        <div className="w-full max-w-[320px] lg:max-w-[571px] text-center lg:text-left text-zinc-600 text-sm lg:text-base font-normal font-['Poppins'] leading-5">
+        <div className="w-full max-w-[320px] lg:max-w-[571px] text-center lg:text-left text-zinc-600 text-sm lg:text-base font-normal font-sans leading-5">
           {items.map((item, idx) => (
             <React.Fragment key={idx}>
               {item}
@@ -41,10 +41,10 @@ export default function Features() {
       <div className="w-full max-w-[1440px] lg:px-28 py-2.5 flex flex-col justify-center items-center gap-2 lg:gap-4 mb-10 lg:mb-24">
         <div className="w-full lg:px-32 flex flex-col justify-center items-center gap-2 lg:gap-4">
           <h1 className="text-center">
-            <span className="text-black text-2xl lg:text-4xl font-medium font-['Poppins'] leading-8 lg:leading-10">About </span>
-            <span className="text-indigo-500 text-2xl lg:text-4xl font-medium font-['Poppins'] leading-8 lg:leading-10">Features</span>
+            <span className="text-black text-2xl lg:text-4xl font-medium font-sans leading-8 lg:leading-10">About </span>
+            <span className="text-indigo-500 text-2xl lg:text-4xl font-medium font-sans leading-8 lg:leading-10">Features</span>
           </h1>
-          <div className="w-full max-w-sm lg:max-w-[908px] text-center text-zinc-600 text-base lg:text-xl font-normal font-['Poppins'] leading-5 lg:leading-6">
+          <div className="w-full max-w-sm lg:max-w-[908px] text-center text-zinc-600 text-base lg:text-xl font-normal font-sans leading-5 lg:leading-6">
             Cocpit is an AI-powered ecosystem where professionals, businesses, recruiters, and innovators connect, grow, and scale together.
           </div>
         </div>

@@ -56,17 +56,17 @@ export const HeroSection = () => {
 
               {/* Floating Bubbles */}
               <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.4 }} className="absolute -left-12 sm:-left-16 top-[48%] bg-indigo-50 rounded-xl px-2.5 py-1.5 inline-flex justify-center items-center gap-1.5 shadow-sm z-30 pointer-events-none whitespace-nowrap">
-                <div className="text-indigo-500 text-[9px] sm:text-[10px] font-normal font-['Poppins']">Liked by Jhon and others</div>
+                <div className="text-indigo-500 text-[9px] sm:text-[10px] font-normal font-sans">Liked by Jhon and others</div>
                 <ThumbsUp className="w-3 h-3 fill-indigo-500 text-indigo-500" />
               </motion.div>
 
               <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.5 }} className="absolute -right-20 sm:-right-28 top-[54%] bg-indigo-50 rounded-xl px-2.5 py-1.5 inline-flex justify-center items-center gap-1.5 shadow-sm z-20 pointer-events-none whitespace-nowrap">
-                <div className="text-indigo-500 text-[9px] sm:text-[10px] font-normal font-['Poppins']">comment on post and others</div>
+                <div className="text-indigo-500 text-[9px] sm:text-[10px] font-normal font-sans">comment on post and others</div>
                 <Bell className="w-3 h-3 text-indigo-500" />
               </motion.div>
 
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }} className="absolute -right-8 sm:-right-12 -bottom-0 bg-indigo-50 rounded-xl rounded-tl-none px-3 py-2 inline-flex justify-center items-center gap-1.5 z-30 shadow-md pointer-events-none whitespace-nowrap">
-                <div className="text-indigo-500 text-[9px] sm:text-[10px] font-normal font-['Poppins'] leading-tight">AI found 15 new opportunities this week<br />+23% networking growth</div>
+                <div className="text-indigo-500 text-[9px] sm:text-[10px] font-normal font-sans leading-tight">AI found 15 new opportunities this week<br />+23% networking growth</div>
               </motion.div>
 
               {/* Center Card */}
@@ -130,21 +130,21 @@ export const HeroSection = () => {
           {/* Header Text */}
           <div className="w-[629px] left-[406px] top-[172px] absolute inline-flex flex-col justify-center items-center gap-2">
             <h1 className="self-stretch text-center justify-end">
-              <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-black text-6xl font-medium font-['Poppins'] leading-[83.20px]">Welcome To </motion.span>
-              <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-black text-6xl font-medium font-['Poppins'] capitalize leading-[83.20px]">C</motion.span>
-              <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-black text-6xl font-medium font-['Poppins'] lowercase leading-[83.20px]">OCPIT</motion.span>
+              <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-black text-6xl font-medium font-sans leading-[83.20px]">Welcome To </motion.span>
+              <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-black text-6xl font-medium font-sans capitalize leading-[83.20px]">C</motion.span>
+              <motion.span initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-black text-6xl font-medium font-sans lowercase leading-[83.20px]">OCPIT</motion.span>
             </h1>
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }} className="self-stretch text-center justify-center text-indigo-500 text-2xl font-medium font-['Poppins'] leading-8 mt-1">Turn Vision into Reality</motion.div>
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="self-stretch text-center justify-center text-gray-500 text-lg font-normal font-['Poppins'] leading-6 mt-1">The next-generation professional networking platform.</motion.div>
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.05 }} className="self-stretch text-center justify-center text-indigo-500 text-2xl font-medium font-sans leading-8 mt-1">Turn Vision into Reality</motion.div>
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="self-stretch text-center justify-center text-gray-500 text-lg font-normal font-sans leading-6 mt-1">The next-generation professional networking platform.</motion.div>
           </div>
 
           {/* Left Text */}
-          <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }} className="w-96 left-[64px] top-[394px] absolute justify-center text-gray-500 text-base font-normal font-['Poppins'] leading-5">
+          <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }} className="w-96 left-[64px] top-[394px] absolute justify-center text-gray-500 text-base font-normal font-sans leading-5">
             Cocpit helps professionals, students, entrepreneurs, and recruiters connect smarter, discover opportunities, and grow faster through AI-powered networking and business intelligence.
           </motion.div>
 
           {/* Right Text */}
-          <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }} className="w-96 left-[1003px] top-[700px] absolute justify-center text-gray-500 text-base font-normal font-['Poppins'] leading-5">
+          <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }} className="w-96 left-[1003px] top-[700px] absolute justify-center text-gray-500 text-base font-normal font-sans leading-5">
             AI continuously identifies opportunities, recommends valuable connections, and helps accelerate professional growth across one intelligent ecosystem.
           </motion.div>
 
@@ -158,17 +158,17 @@ export const HeroSection = () => {
 
           {/* Floating Bubbles */}
           <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.4 }} className="px-4 py-2 left-[376px] top-[538px] absolute bg-indigo-50 rounded-xl inline-flex justify-center items-center gap-2.5 shadow-sm z-20">
-            <div className="justify-start text-indigo-500 text-sm font-normal font-['Poppins'] leading-5">Liked by Jhon and others</div>
+            <div className="justify-start text-indigo-500 text-sm font-normal font-sans leading-5">Liked by Jhon and others</div>
             <ThumbsUp className="w-4 h-4 fill-indigo-500 text-indigo-500" />
           </motion.div>
 
           <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.5 }} className="px-4 py-2 left-[837px] top-[607px] absolute bg-indigo-50 rounded-xl inline-flex justify-center items-center gap-2.5 shadow-sm z-20">
-            <div className="justify-start text-indigo-500 text-sm font-normal font-['Poppins'] leading-5">comment on post and others</div>
+            <div className="justify-start text-indigo-500 text-sm font-normal font-sans leading-5">comment on post and others</div>
             <Bell className="w-4 h-4 text-indigo-500" />
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }} className="h-20 px-4 py-2 left-[815px] top-[840px] absolute bg-indigo-50 rounded-tl-xl rounded-tr-xl inline-flex justify-center items-center gap-2.5 z-20">
-            <div className="w-72 justify-start text-indigo-500 text-sm font-normal font-['Poppins'] leading-5">AI found 15 new opportunities this week<br />+23% networking growth</div>
+            <div className="w-72 justify-start text-indigo-500 text-sm font-normal font-sans leading-5">AI found 15 new opportunities this week<br />+23% networking growth</div>
           </motion.div>
 
           {/* Center Card */}

@@ -141,21 +141,21 @@ const JobCard = ({ title, details, description, onApply }: { title: string, deta
         className="w-full lg:w-[810px] h-[125px] px-[25px] py-[20px] rounded-[12px] border border-[#E0E7FF] flex flex-col justify-center items-start gap-2.5 hover:shadow-lg transition-shadow cursor-pointer"
         onClick={() => setIsExpanded(!isExpanded)}
       >
-        <div className="text-black text-base lg:text-xl font-medium font-['Poppins'] leading-5 lg:leading-6">{title}</div>
-        <div className="text-[#606060] text-xs lg:text-base font-normal font-['Poppins'] leading-4 lg:leading-5">{details}</div>
+        <div className="text-black text-base lg:text-xl font-medium font-sans leading-5 lg:leading-6">{title}</div>
+        <div className="text-[#606060] text-xs lg:text-base font-normal font-sans leading-4 lg:leading-5">{details}</div>
       </div>
 
       {/* Expanded Content */}
       {isExpanded && (
         <div className="w-full lg:w-[810px] px-[25px] flex flex-col justify-center items-start gap-8 cursor-default">
-          <div className="self-stretch text-black text-xs lg:text-base font-normal font-['Poppins'] leading-4 lg:leading-5 whitespace-pre-wrap">
+          <div className="self-stretch text-black text-xs lg:text-base font-normal font-sans leading-4 lg:leading-5 whitespace-pre-wrap">
             {description}
           </div>
           <button
             onClick={() => onApply(title)}
             className="w-44 px-4 py-2 bg-indigo-500 hover:bg-indigo-600 transition-colors rounded-xl outline outline-1 outline-offset-[-1px] outline-indigo-500 inline-flex justify-center items-center gap-2.5"
           >
-            <span className="text-center text-white text-base font-normal font-['Poppins'] leading-6">Apply Now</span>
+            <span className="text-center text-white text-base font-normal font-sans leading-6">Apply Now</span>
           </button>
         </div>
       )}
@@ -207,10 +207,10 @@ What We’re Looking For:
 
         {/* Header Section */}
         <div className="w-full px-6 flex flex-col justify-start items-center gap-2 mb-8 lg:mb-20 mt-10 lg:mt-0">
-          <h1 className="self-stretch text-center justify-center text-black text-2xl lg:text-4xl font-medium font-['Poppins'] leading-8 lg:leading-10">
+          <h1 className="self-stretch text-center justify-center text-black text-2xl lg:text-4xl font-medium font-sans leading-8 lg:leading-10">
             Join The Execution Layer
           </h1>
-          <div className="self-stretch text-center justify-center text-zinc-600 text-sm lg:text-2xl font-normal font-['Poppins'] leading-5 lg:leading-8">
+          <div className="self-stretch text-center justify-center text-zinc-600 text-sm lg:text-2xl font-normal font-sans leading-5 lg:leading-8">
             Help build the intelligent infrastructure powering Cocpit.
           </div>
         </div>
