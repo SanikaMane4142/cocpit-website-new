@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from 'react';
 
 const allMembers = [
@@ -15,13 +16,39 @@ const allMembers = [
 ];
 
 export const TeamSection = () => {
-  const infiniteMembers = [...allMembers, ...allMembers, ...allMembers];
-  const [currentIndex, setCurrentIndex] = useState(allMembers.length + 1); // Start at Yash (index 13 + 1 to show Yash centered if we want, or just start at index 14. Wait, Yash is index 13.
-  const [isTransitioning, setIsTransitioning] = useState(true);
+  const SHOW_TEAM = false; // Toggle to true to show the team slider again
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
-  // Correct starting index: Yash is allMembers.length. We usually start at allMembers.length + 1 to center the second item?
-  // Previous code had useState(1). So let's use allMembers.length + 1
+  const infiniteMembers = [...allMembers, ...allMembers, ...allMembers];
+  const [currentIndex, setCurrentIndex] = useState(allMembers.length + 1);
+  const [isTransitioning, setIsTransitioning] = useState(true);
+  const [isMounted, setIsMounted] = useState(false);
+
   React.useEffect(() => {
+    if (SHOW_TEAM) return;
+
+    const targetDate = new Date('2026-06-28T00:00:00').getTime();
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        setTimeLeft({
+          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((difference % (1000 * 60)) / 1000),
+        });
+      }
+    };
+
+    updateCountdown();
+    const timerId = setInterval(updateCountdown, 1000);
+    return () => clearInterval(timerId);
+  }, [SHOW_TEAM]);
+
+  React.useEffect(() => {
+    setIsMounted(true);
     setCurrentIndex(allMembers.length + 1);
   }, []);
 
@@ -51,10 +78,10 @@ export const TeamSection = () => {
           alt={member.name} 
         />
         <div className="flex flex-col justify-center items-start gap-1">
-          <div className={`font-medium leading-[130%] whitespace-nowrap text-black font-['Poppins'] ${titleSize} ${isTransitioning ? 'transition-all duration-500' : ''}`}>
+          <div className={`font-medium leading-[130%] whitespace-nowrap text-black font-sans ${titleSize} ${isTransitioning ? 'transition-all duration-500' : ''}`}>
             {member.name}
           </div>
-          <div className={`font-normal leading-[130%] whitespace-nowrap text-[#9CA3AF] font-['Poppins'] ${roleSize} ${isTransitioning ? 'transition-all duration-500' : ''}`}>
+          <div className={`font-normal leading-[130%] whitespace-nowrap text-[#9CA3AF] font-sans ${roleSize} ${isTransitioning ? 'transition-all duration-500' : ''}`}>
             {member.role}
           </div>
         </div>
@@ -86,10 +113,10 @@ export const TeamSection = () => {
           />
           <div className="flex justify-center items-center gap-4">
             <div className="w-32 inline-flex flex-col justify-center items-start">
-              <div className={`justify-center text-black text-base font-medium font-['Poppins'] leading-5 ${isTransitioning ? 'transition-all duration-300' : ''}`}>
+              <div className={`justify-center text-black text-base font-medium font-sans leading-5 ${isTransitioning ? 'transition-all duration-300' : ''}`}>
                 {member.name}
               </div>
-              <div className={`self-stretch justify-center text-gray-400 text-sm font-normal font-['Poppins'] leading-5 ${isTransitioning ? 'transition-all duration-300' : ''}`}>
+              <div className={`self-stretch justify-center text-gray-400 text-sm font-normal font-sans leading-5 ${isTransitioning ? 'transition-all duration-300' : ''}`}>
                 {member.role}
               </div>
             </div>
@@ -129,6 +156,78 @@ export const TeamSection = () => {
     }
   }, [currentIndex]);
 
+  if (!SHOW_TEAM) {
+    if (!isMounted) return null; // Avoid hydration mismatch on initial render
+
+    return (
+      <section className="py-16 lg:py-24 relative flex-col justify-center items-center gap-2.5 bg-white w-full overflow-hidden">
+        <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-32 flex flex-col justify-center items-center gap-8 lg:gap-12">
+          
+          {/* Header */}
+          <div className="flex flex-col justify-center items-center gap-3 relative z-10 w-full lg:w-[1184px]">
+            <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 mb-2">
+              <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
+              <span className="text-indigo-600 text-xs font-semibold tracking-widest uppercase">Classified</span>
+            </div>
+            <div className="text-center font-sans font-medium text-3xl lg:text-4xl leading-[130%] text-black w-full">
+              Unmasking The <span className="text-indigo-500">Cocpit Team</span>
+            </div>
+            <div className="text-center font-sans font-normal text-base lg:text-lg leading-[130%] text-[#6B7280] w-full max-w-2xl">
+              We're pulling back the curtain to reveal the incredible minds building the future of AI-powered networking. The official team reveal happens on June 28th!
+            </div>
+          </div>
+
+          {/* Countdown Block */}
+          <div className="w-full max-w-3xl bg-indigo-50/50 backdrop-blur-sm rounded-[24px] p-6 lg:p-12 shadow-[0px_0px_50px_0px_rgba(99,102,241,0.1)] border border-indigo-100 flex flex-col items-center gap-8 relative overflow-hidden">
+            
+            {/* Background embellishments */}
+            <div className="absolute -top-24 -right-24 w-48 h-48 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div className="flex justify-center items-center gap-2 sm:gap-4 lg:gap-8 w-full z-10">
+              
+              <div className="flex flex-col items-center">
+                <div className="w-[70px] h-[70px] sm:w-[90px] sm:h-[90px] lg:w-[120px] lg:h-[120px] bg-white rounded-2xl shadow-sm outline outline-1 outline-offset-[-1px] outline-indigo-100 flex justify-center items-center text-3xl lg:text-6xl font-semibold text-indigo-600 font-sans tracking-tight">
+                  {timeLeft.days.toString().padStart(2, '0')}
+                </div>
+                <div className="mt-3 text-[10px] sm:text-xs lg:text-sm font-medium text-gray-500 uppercase tracking-[0.2em]">Days</div>
+              </div>
+
+              <div className="text-2xl lg:text-5xl font-medium text-indigo-200 pb-8">:</div>
+
+              <div className="flex flex-col items-center">
+                <div className="w-[70px] h-[70px] sm:w-[90px] sm:h-[90px] lg:w-[120px] lg:h-[120px] bg-white rounded-2xl shadow-sm outline outline-1 outline-offset-[-1px] outline-indigo-100 flex justify-center items-center text-3xl lg:text-6xl font-semibold text-indigo-600 font-sans tracking-tight">
+                  {timeLeft.hours.toString().padStart(2, '0')}
+                </div>
+                <div className="mt-3 text-[10px] sm:text-xs lg:text-sm font-medium text-gray-500 uppercase tracking-[0.2em]">Hours</div>
+              </div>
+
+              <div className="text-2xl lg:text-5xl font-medium text-indigo-200 pb-8">:</div>
+
+              <div className="flex flex-col items-center">
+                <div className="w-[70px] h-[70px] sm:w-[90px] sm:h-[90px] lg:w-[120px] lg:h-[120px] bg-white rounded-2xl shadow-sm outline outline-1 outline-offset-[-1px] outline-indigo-100 flex justify-center items-center text-3xl lg:text-6xl font-semibold text-indigo-600 font-sans tracking-tight">
+                  {timeLeft.minutes.toString().padStart(2, '0')}
+                </div>
+                <div className="mt-3 text-[10px] sm:text-xs lg:text-sm font-medium text-gray-500 uppercase tracking-[0.2em]">Mins</div>
+              </div>
+
+              <div className="hidden sm:block text-2xl lg:text-5xl font-medium text-indigo-200 pb-8">:</div>
+
+              <div className="hidden sm:flex flex-col items-center">
+                <div className="w-[70px] h-[70px] sm:w-[90px] sm:h-[90px] lg:w-[120px] lg:h-[120px] bg-white rounded-2xl shadow-sm outline outline-1 outline-offset-[-1px] outline-indigo-100 flex justify-center items-center text-3xl lg:text-6xl font-semibold text-indigo-600 font-sans tracking-tight">
+                  {timeLeft.seconds.toString().padStart(2, '0')}
+                </div>
+                <div className="mt-3 text-[10px] sm:text-xs lg:text-sm font-medium text-gray-500 uppercase tracking-[0.2em]">Secs</div>
+              </div>
+
+            </div>
+          </div>
+          
+        </div>
+      </section>
+    );
+  }
+
   return (
     <>
       <section className="hidden lg:flex py-12 lg:py-24 relative flex-col justify-center items-center gap-2.5 overflow-hidden bg-white w-full">
@@ -136,10 +235,10 @@ export const TeamSection = () => {
           
           {/* Header */}
           <div className="flex flex-col justify-center items-center gap-2 relative z-10 w-full lg:w-[1184px] h-auto lg:h-[60px]">
-            <div className="text-center font-['Poppins'] font-medium text-2xl leading-[130%] text-black w-full lg:w-[358px] h-auto lg:h-[31px]">
+            <div className="text-center font-sans font-medium text-2xl leading-[130%] text-black w-full lg:w-[358px] h-auto lg:h-[31px]">
               Meet the Team Behind <span className="text-indigo-500">Cocpit</span>
             </div>
-            <div className="text-center font-['Poppins'] font-normal text-sm lg:text-[16px] leading-[130%] text-[#6B7280] w-full lg:w-[560px] h-auto lg:h-[21px]">
+            <div className="text-center font-sans font-normal text-sm lg:text-[16px] leading-[130%] text-[#6B7280] w-full lg:w-[560px] h-auto lg:h-[21px]">
               Building the future of AI-powered networking and professional growth.
             </div>
           </div>
@@ -149,7 +248,7 @@ export const TeamSection = () => {
             <div className="min-w-max lg:w-full lg:h-full flex items-center relative">
               <div 
                 className={`flex items-center gap-4 lg:gap-[50px] lg:absolute lg:left-0 ${isTransitioning ? 'transition-transform duration-500 ease-in-out' : ''}`}
-                style={{ transform: typeof window !== 'undefined' && window.innerWidth >= 1024 ? `translateX(${(1 - currentIndex) * 375}px)` : 'none' }} 
+                style={{ transform: isMounted && window.innerWidth >= 1024 ? `translateX(${(1 - currentIndex) * 375}px)` : 'none' }} 
               >
                 {infiniteMembers.map((m, idx) => (
                   <MemberCard key={`${m.name}-${idx}`} member={m} index={idx} />
@@ -160,7 +259,7 @@ export const TeamSection = () => {
 
           {/* Footer */}
           <div className="w-full lg:w-[1184px] h-auto lg:h-[83px] flex justify-between items-center p-0 lg:p-2.5 mt-2">
-            <div className="w-full lg:w-[494px] mx-auto text-center font-['Poppins'] font-normal text-sm lg:text-[16px] leading-[130%] text-[#7E8490]">
+            <div className="w-full lg:w-[494px] mx-auto text-center font-sans font-normal text-sm lg:text-[16px] leading-[130%] text-[#7E8490]">
               Cocpit is built to help professionals discover opportunities grow meaningful connections, and accelerate their careers through AI-powered intelligence.
             </div>
           </div>
@@ -174,10 +273,10 @@ export const TeamSection = () => {
           
           <div className="flex flex-col justify-center items-center gap-2 px-6 max-w-[384px]">
             <div className="text-center">
-              <span className="text-black text-base font-medium font-['Poppins'] leading-5">Meet the Team Behind </span>
-              <span className="text-indigo-500 text-base font-medium font-['Poppins'] leading-5">Cocpit</span>
+              <span className="text-black text-base font-medium font-sans leading-5">Meet the Team Behind </span>
+              <span className="text-indigo-500 text-base font-medium font-sans leading-5">Cocpit</span>
             </div>
-            <div className="text-center text-gray-500 text-sm font-normal font-['Poppins'] leading-5">
+            <div className="text-center text-gray-500 text-sm font-normal font-sans leading-5">
               Building the future of AI-powered networking and professional growth.
             </div>
           </div>
@@ -206,9 +305,9 @@ export const TeamSection = () => {
           
           <div className="w-full flex justify-center items-center px-6 max-w-[384px]">
             <div className="text-center">
-              <span className="text-gray-500 text-sm font-normal font-['Poppins'] leading-5">Cocpit is built to help professionals discover opportunities </span>
-              <span className="text-black text-sm font-medium font-['Poppins'] leading-5">grow meaningful connections, and accelerate their careers through </span>
-              <span className="text-gray-500 text-sm font-normal font-['Poppins'] leading-5">AI-powered intelligence.</span>
+              <span className="text-gray-500 text-sm font-normal font-sans leading-5">Cocpit is built to help professionals discover opportunities </span>
+              <span className="text-black text-sm font-medium font-sans leading-5">grow meaningful connections, and accelerate their careers through </span>
+              <span className="text-gray-500 text-sm font-normal font-sans leading-5">AI-powered intelligence.</span>
             </div>
           </div>
 

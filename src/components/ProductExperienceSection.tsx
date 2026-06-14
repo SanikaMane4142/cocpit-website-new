@@ -20,8 +20,8 @@ export const ProductExperienceSection = () => {
                     </div>
                   </div>
                   <div className="w-20 sm:w-24 h-10 sm:h-12 inline-flex flex-col justify-center items-start shrink-0">
-                    <div className="w-12 h-5 sm:h-6 justify-start text-black text-[8px] sm:text-[10px] font-normal font-['Poppins'] leading-5 sm:leading-6">GET IN ON</div>
-                    <div className="text-center justify-start text-black text-xs sm:text-sm font-normal font-['Poppins'] leading-5 sm:leading-6">App Store</div>
+                    <div className="w-12 h-5 sm:h-6 justify-start text-black text-[8px] sm:text-[10px] font-normal font-sans leading-5 sm:leading-6">GET IN ON</div>
+                    <div className="text-center justify-start text-black text-xs sm:text-sm font-normal font-sans leading-5 sm:leading-6">App Store</div>
                   </div>
                 </div>
               </button>
@@ -33,8 +33,8 @@ export const ProductExperienceSection = () => {
                     <div className="w-4 h-5 sm:w-5 sm:h-6 left-[4.18px] top-[3.13px] absolute bg-black [mask-image:url('data:image/svg+xml;utf8,<svg viewBox=\\\'0 0 24 24\\\'><path d=\\\'M3 2v20c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V2c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2zm16 20H5V2h14v20zM8 5l9 7-9 7V5z\\\'/></svg>')] [mask-size:contain] [mask-position:center] [mask-repeat:no-repeat]" />
                   </div>
                   <div className="flex-1 h-10 sm:h-12 inline-flex flex-col justify-center items-start shrink-0">
-                    <div className="w-12 h-5 sm:h-6 justify-start text-black text-[8px] sm:text-[10px] font-normal font-['Poppins'] leading-5 sm:leading-6">GET IN ON</div>
-                    <div className="text-center justify-start text-black text-xs sm:text-sm font-normal font-['Poppins'] leading-5 sm:leading-6">Play Store</div>
+                    <div className="w-12 h-5 sm:h-6 justify-start text-black text-[8px] sm:text-[10px] font-normal font-sans leading-5 sm:leading-6">GET IN ON</div>
+                    <div className="text-center justify-start text-black text-xs sm:text-sm font-normal font-sans leading-5 sm:leading-6">Play Store</div>
                   </div>
                 </div>
               </button>
@@ -43,14 +43,14 @@ export const ProductExperienceSection = () => {
             {/* Desktop Image */}
             <img 
               className="hidden lg:block order-2 lg:order-1 max-w-[1132px] w-full h-[736px] object-cover rounded-xl shadow-[0px_0px_50px_0px_rgba(255,255,255,0.25)] border border-[#B7B7B7]" 
-              src={heroImage} 
+              src={heroImage.src} 
               alt="Interactive Product Experience Desktop" 
             />
             
             {/* Mobile Image */}
             <img 
               className="lg:hidden order-2 lg:order-1 w-72 h-[659px] object-cover rounded-xl shadow-[0px_0px_50px_0px_rgba(255,255,255,0.25)] border border-[#B7B7B7]" 
-              src={heroImageMobile} 
+              src={heroImageMobile.src} 
               alt="Interactive Product Experience Mobile" 
             />
             

@@ -1,3 +1,4 @@
+"use client";
 import { motion } from 'framer-motion';
 import { Users, Network, Briefcase, TrendingUp } from 'lucide-react';
 
@@ -36,8 +37,8 @@ export const FeaturesSection = () => {
                 className="w-full flex flex-col justify-start items-start gap-2"
               >
                 <div>
-                  <span className="text-black text-[24px] font-medium font-['Poppins'] leading-[130%]">One Platform. </span>
-                  <span className="text-indigo-500 text-[24px] font-medium font-['Poppins'] leading-[130%]">Unlimited Growth.</span>
+                  <span className="text-black text-[24px] font-medium font-sans leading-[130%]">One Platform. </span>
+                  <span className="text-indigo-500 text-[24px] font-medium font-sans leading-[130%]">Unlimited Growth.</span>
                 </div>
               </motion.div>
               <p className="text-zinc-600 text-sm lg:text-base font-normal leading-5">

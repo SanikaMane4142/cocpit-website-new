@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'Poppins', sans-serif;
+  --font-sans: 'Helvetica Now Display', 'Helvetica Now', Helvetica, Arial, sans-serif;
   
   --color-indigo-50: #eef2ff;
   --color-indigo-100: #e0e7ff;
