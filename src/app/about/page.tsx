@@ -3,37 +3,37 @@ import { useState, useEffect } from 'react';
 
 const Testimonial = () => (
     <section className="pt-[151px] lg:pt-40 pb-0 lg:pb-20 relative flex justify-center items-center px-6 lg:px-0">
-        <div className="w-full max-w-[1171px] lg:h-96 bg-indigo-50/50 rounded-2xl px-16 py-12 flex flex-col lg:flex-row justify-center items-center gap-4 lg:gap-[10px]">
+        <div className="w-full max-w-[1171px] lg:h-96  rounded-2xl px-16 py-12 flex flex-col lg:flex-row justify-center items-center gap-4 lg:gap-[10px]">
 
             {/* Desktop Layout */}
             <div className="hidden lg:flex w-full justify-between items-center">
                 <div className="flex flex-col justify-center items-center relative">
-                    <img className="w-44 h-56 rounded-xl object-cover" src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=400&q=80" alt="John Smith" />
+                    <img className="w-44 h-56 rounded-xl object-cover" src="/yash oswal.png" alt="Yash Oswal" />
                     <div className="w-44 mt-3 flex flex-col justify-center items-center">
-                        <div className="text-black text-base font-semibold leading-5 text-center">John Smith</div>
+                        <div className="text-black text-base font-semibold leading-5 text-center">Yash Oswal</div>
                         <div className="text-indigo-500 text-base font-semibold leading-5 text-center">Founder & CEO</div>
                     </div>
                 </div>
                 <div className="w-[593px] h-40">
-                    <span className="text-zinc-600 text-2xl font-medium leading-8">I tell everyone I know to download Raycast. </span>
-                    <span className="text-black text-2xl font-medium leading-8">It’s truly become the centerpiece of everything I do on my computer</span>
-                    <span className="text-zinc-600 text-2xl font-medium leading-8"> and the #1 way I stay in flow.</span>
+                    <span className="text-zinc-600 text-2xl font-medium leading-8">The greatest luxury in business isn't money. It's time. </span>
+                    <span className="text-black text-2xl font-medium leading-8">Cocpit gives you both.</span>
+                    <span className="text-zinc-600 text-2xl font-medium leading-8"> One platform. Infinite possibilities.</span>
                 </div>
             </div>
 
             {/* Mobile Layout */}
             <div className="flex lg:hidden w-64 flex-col justify-start items-center gap-4">
-                <img className="w-28 h-32 rounded-xl object-cover" src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=400&q=80" alt="John Smith" />
+                <img className="w-28 h-32 rounded-xl object-cover" src="/yash oswal.png" alt="Yash Oswal" />
                 <div className="h-12 inline-flex justify-center items-center gap-4">
                     <div className="w-32 h-16 inline-flex flex-col justify-center items-center">
-                        <div className="text-center text-black text-base font-medium font-sans leading-5">John Smith </div>
+                        <div className="text-center text-black text-base font-medium font-sans leading-5">Yash Oswal </div>
                         <div className="text-center text-zinc-600 text-sm font-normal font-sans leading-5">Founder & CEO</div>
                     </div>
                 </div>
                 <div className="text-center">
-                    <span className="text-zinc-600 text-xs font-medium font-sans leading-[130%]">I tell everyone I know to download Raycast. </span>
-                    <span className="text-black text-xs font-medium font-sans leading-[130%]">It’s truly become the centerpiece of everything I do on my computer</span>
-                    <span className="text-zinc-600 text-xs font-medium font-sans leading-[130%]"> and the #1 way I stay in flow.</span>
+                    <span className="text-zinc-600 text-xs font-medium font-sans leading-[130%]">The greatest luxury in business isn't money. It's time. </span>
+                    <span className="text-black text-xs font-medium font-sans leading-[130%]">Cocpit gives you both.</span>
+                    <span className="text-zinc-600 text-xs font-medium font-sans leading-[130%]"> One platform. Infinite possibilities.</span>
                 </div>
             </div>
 
@@ -114,67 +114,67 @@ const FullTeamSection = () => {
         return (
             <section className="py-16 lg:py-24 relative flex-col justify-center items-center gap-2.5 bg-white w-full overflow-hidden">
                 <div className="w-full max-w-[1440px] mx-auto px-6 lg:px-32 flex flex-col justify-center items-center gap-8 lg:gap-12">
-                
-                {/* Header */}
-                <div className="flex flex-col justify-center items-center gap-3 relative z-10 w-full lg:w-[1184px]">
-                    <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 mb-2">
-                    <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
-                    <span className="text-indigo-600 text-xs font-semibold tracking-widest uppercase">Classified</span>
-                    </div>
-                    <div className="text-center font-sans font-medium text-3xl lg:text-4xl leading-[130%] text-black w-full">
-                    Unmasking The <span className="text-indigo-500">Cocpit Team</span>
-                    </div>
-                    <div className="text-center font-sans font-normal text-base lg:text-lg leading-[130%] text-[#6B7280] w-full max-w-2xl">
-                    We're pulling back the curtain to reveal the incredible minds building the future of AI-powered networking. The official team reveal happens on June 28th!
-                    </div>
-                </div>
 
-                {/* Countdown Block */}
-                <div className="w-full max-w-3xl bg-indigo-50/50 backdrop-blur-sm rounded-[24px] p-6 lg:p-12 shadow-[0px_0px_50px_0px_rgba(99,102,241,0.1)] border border-indigo-100 flex flex-col items-center gap-8 relative overflow-hidden">
-                    
-                    {/* Background embellishments */}
-                    <div className="absolute -top-24 -right-24 w-48 h-48 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
-                    <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
-
-                    <div className="flex justify-center items-center gap-2 sm:gap-4 lg:gap-8 w-full z-10">
-                    
-                    <div className="flex flex-col items-center">
-                        <div className="w-[70px] h-[70px] sm:w-[90px] sm:h-[90px] lg:w-[120px] lg:h-[120px] bg-white rounded-2xl shadow-sm outline outline-1 outline-offset-[-1px] outline-indigo-100 flex justify-center items-center text-3xl lg:text-6xl font-semibold text-indigo-600 font-sans tracking-tight">
-                        {timeLeft.days.toString().padStart(2, '0')}
+                    {/* Header */}
+                    <div className="flex flex-col justify-center items-center gap-3 relative z-10 w-full lg:w-[1184px]">
+                        <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 mb-2">
+                            <span className="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
+                            <span className="text-indigo-600 text-xs font-semibold tracking-widest uppercase">Classified</span>
                         </div>
-                        <div className="mt-3 text-[10px] sm:text-xs lg:text-sm font-medium text-gray-500 uppercase tracking-[0.2em]">Days</div>
-                    </div>
-
-                    <div className="text-2xl lg:text-5xl font-medium text-indigo-200 pb-8">:</div>
-
-                    <div className="flex flex-col items-center">
-                        <div className="w-[70px] h-[70px] sm:w-[90px] sm:h-[90px] lg:w-[120px] lg:h-[120px] bg-white rounded-2xl shadow-sm outline outline-1 outline-offset-[-1px] outline-indigo-100 flex justify-center items-center text-3xl lg:text-6xl font-semibold text-indigo-600 font-sans tracking-tight">
-                        {timeLeft.hours.toString().padStart(2, '0')}
+                        <div className="text-center font-sans font-medium text-3xl lg:text-4xl leading-[130%] text-black w-full">
+                            Unmasking The <span className="text-indigo-500">Cocpit Team</span>
                         </div>
-                        <div className="mt-3 text-[10px] sm:text-xs lg:text-sm font-medium text-gray-500 uppercase tracking-[0.2em]">Hours</div>
-                    </div>
-
-                    <div className="text-2xl lg:text-5xl font-medium text-indigo-200 pb-8">:</div>
-
-                    <div className="flex flex-col items-center">
-                        <div className="w-[70px] h-[70px] sm:w-[90px] sm:h-[90px] lg:w-[120px] lg:h-[120px] bg-white rounded-2xl shadow-sm outline outline-1 outline-offset-[-1px] outline-indigo-100 flex justify-center items-center text-3xl lg:text-6xl font-semibold text-indigo-600 font-sans tracking-tight">
-                        {timeLeft.minutes.toString().padStart(2, '0')}
+                        <div className="text-center font-sans font-normal text-base lg:text-lg leading-[130%] text-[#6B7280] w-full max-w-2xl">
+                            We're pulling back the curtain to reveal the incredible minds building the future of AI-powered networking. The official team reveal happens on June 28th!
                         </div>
-                        <div className="mt-3 text-[10px] sm:text-xs lg:text-sm font-medium text-gray-500 uppercase tracking-[0.2em]">Mins</div>
                     </div>
 
-                    <div className="hidden sm:block text-2xl lg:text-5xl font-medium text-indigo-200 pb-8">:</div>
+                    {/* Countdown Block */}
+                    <div className="w-full max-w-3xl bg-indigo-50/50 backdrop-blur-sm rounded-[24px] p-6 lg:p-12 shadow-[0px_0px_50px_0px_rgba(99,102,241,0.1)] border border-indigo-100 flex flex-col items-center gap-8 relative overflow-hidden">
 
-                    <div className="hidden sm:flex flex-col items-center">
-                        <div className="w-[70px] h-[70px] sm:w-[90px] sm:h-[90px] lg:w-[120px] lg:h-[120px] bg-white rounded-2xl shadow-sm outline outline-1 outline-offset-[-1px] outline-indigo-100 flex justify-center items-center text-3xl lg:text-6xl font-semibold text-indigo-600 font-sans tracking-tight">
-                        {timeLeft.seconds.toString().padStart(2, '0')}
+                        {/* Background embellishments */}
+                        <div className="absolute -top-24 -right-24 w-48 h-48 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                        <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                        <div className="flex justify-center items-center gap-2 sm:gap-4 lg:gap-8 w-full z-10">
+
+                            <div className="flex flex-col items-center">
+                                <div className="w-[70px] h-[70px] sm:w-[90px] sm:h-[90px] lg:w-[120px] lg:h-[120px] bg-white rounded-2xl shadow-sm outline outline-1 outline-offset-[-1px] outline-indigo-100 flex justify-center items-center text-3xl lg:text-6xl font-semibold text-indigo-600 font-sans tracking-tight">
+                                    {timeLeft.days.toString().padStart(2, '0')}
+                                </div>
+                                <div className="mt-3 text-[10px] sm:text-xs lg:text-sm font-medium text-gray-500 uppercase tracking-[0.2em]">Days</div>
+                            </div>
+
+                            <div className="text-2xl lg:text-5xl font-medium text-indigo-200 pb-8">:</div>
+
+                            <div className="flex flex-col items-center">
+                                <div className="w-[70px] h-[70px] sm:w-[90px] sm:h-[90px] lg:w-[120px] lg:h-[120px] bg-white rounded-2xl shadow-sm outline outline-1 outline-offset-[-1px] outline-indigo-100 flex justify-center items-center text-3xl lg:text-6xl font-semibold text-indigo-600 font-sans tracking-tight">
+                                    {timeLeft.hours.toString().padStart(2, '0')}
+                                </div>
+                                <div className="mt-3 text-[10px] sm:text-xs lg:text-sm font-medium text-gray-500 uppercase tracking-[0.2em]">Hours</div>
+                            </div>
+
+                            <div className="text-2xl lg:text-5xl font-medium text-indigo-200 pb-8">:</div>
+
+                            <div className="flex flex-col items-center">
+                                <div className="w-[70px] h-[70px] sm:w-[90px] sm:h-[90px] lg:w-[120px] lg:h-[120px] bg-white rounded-2xl shadow-sm outline outline-1 outline-offset-[-1px] outline-indigo-100 flex justify-center items-center text-3xl lg:text-6xl font-semibold text-indigo-600 font-sans tracking-tight">
+                                    {timeLeft.minutes.toString().padStart(2, '0')}
+                                </div>
+                                <div className="mt-3 text-[10px] sm:text-xs lg:text-sm font-medium text-gray-500 uppercase tracking-[0.2em]">Mins</div>
+                            </div>
+
+                            <div className="hidden sm:block text-2xl lg:text-5xl font-medium text-indigo-200 pb-8">:</div>
+
+                            <div className="hidden sm:flex flex-col items-center">
+                                <div className="w-[70px] h-[70px] sm:w-[90px] sm:h-[90px] lg:w-[120px] lg:h-[120px] bg-white rounded-2xl shadow-sm outline outline-1 outline-offset-[-1px] outline-indigo-100 flex justify-center items-center text-3xl lg:text-6xl font-semibold text-indigo-600 font-sans tracking-tight">
+                                    {timeLeft.seconds.toString().padStart(2, '0')}
+                                </div>
+                                <div className="mt-3 text-[10px] sm:text-xs lg:text-sm font-medium text-gray-500 uppercase tracking-[0.2em]">Secs</div>
+                            </div>
+
                         </div>
-                        <div className="mt-3 text-[10px] sm:text-xs lg:text-sm font-medium text-gray-500 uppercase tracking-[0.2em]">Secs</div>
                     </div>
 
-                    </div>
-                </div>
-                
                 </div>
             </section>
         );
@@ -257,7 +257,7 @@ const AboutInfo = () => (
                     <span className="text-indigo-500 text-3xl font-medium leading-10">Vision</span>
                 </div>
                 <div className="flex-1 text-zinc-600 text-base font-normal leading-5">
-                    Everything you do on Cocpit is powered by artificial intelligence. From crafting the perfect profile and discovering relevant connections to matching opportunities and facilitating meaningful conversations – our AI works behind the scenes to make your professional journey smoother, smarter, and more successful.
+                    We believe the next generation of technology won't come from improving what already exists, it will come from inventing what doesn't. Cocpit is building the future through groundbreaking products that redefine how the world works, collaborates, and grows.
                 </div>
             </div>
 
@@ -269,7 +269,7 @@ const AboutInfo = () => (
                     <span className="text-indigo-500 text-3xl font-medium leading-10">Do</span>
                 </div>
                 <div className="flex-1 text-zinc-600 text-base font-normal leading-5">
-                    Everything you do on Cocpit is powered by artificial intelligence. From crafting the perfect profile and discovering relevant connections to matching opportunities and facilitating meaningful conversations – our AI works behind the scenes to make your professional journey smoother, smarter, and more successful.
+                    The most powerful opportunities in the world are created when the right people meet at the right moment. Yet discovering those opportunities remains surprisingly difficult. We are building Cocpit to change that. By combining artificial intelligence with professional networking, we're creating a platform that doesn't just connect professionals it actively helps professionals unlock their next opportunity, scale and grow their business. We are building an AI that not only suggests, but executes all the tasks for you.
                 </div>
             </div>
 
@@ -281,7 +281,7 @@ const AboutInfo = () => (
                     <span className="text-indigo-500 text-3xl font-medium leading-10">Difference</span>
                 </div>
                 <div className="flex-1 text-zinc-600 text-base font-normal leading-5">
-                    Everything you do on Cocpit is powered by artificial intelligence. From crafting the perfect profile and discovering relevant connections to matching opportunities and facilitating meaningful conversations – our AI works behind the scenes to make your professional journey smoother, smarter, and more successful.
+                    Cocpit is an AI-powered professional platform that helps entrepreneurs, professionals, startups, and businesses discover opportunities, build meaningful networks, and take action faster. Unlike traditional business networking platforms that only provide information, Cocpit combines AI-driven business intelligence, workflow automation, strategic recommendations, and execution support to help users identify growth opportunities, analyze business performance, streamline operations, and accelerate career and business growth. Whether you're building a startup, expanding your professional network, scaling a business, or advancing your career, Cocpit acts as an intelligent AI partner that transforms insights into action. The future of professional networking isn't about having more tools—it's about having AI that helps you get things done.
                 </div>
             </div>
         </div>
@@ -294,7 +294,7 @@ const AboutInfo = () => (
                     <span className="text-indigo-500 text-xl font-medium font-sans leading-6">Vision</span>
                 </div>
                 <div className="w-full text-center text-zinc-600 text-xs font-normal font-sans leading-4">
-                    Everything you do on Cocpit is powered by artificial intelligence. From crafting the perfect profile and discovering relevant connections to matching opportunities and facilitating meaningful conversations – our AI works behind the scenes to make your professional journey smoother, smarter, and more successful.
+                    We believe the next generation of technology won't come from improving what already exists, it will come from inventing what doesn't. Cocpit is building the future through groundbreaking products that redefine how the world works, collaborates, and grows.
                 </div>
             </div>
 
@@ -306,7 +306,7 @@ const AboutInfo = () => (
                     <span className="text-indigo-500 text-xl font-medium font-sans leading-6">Do</span>
                 </div>
                 <div className="w-full text-center text-zinc-600 text-xs font-normal font-sans leading-4">
-                    Everything you do on Cocpit is powered by artificial intelligence. From crafting the perfect profile and discovering relevant connections to matching opportunities and facilitating meaningful conversations – our AI works behind the scenes to make your professional journey smoother, smarter, and more successful.
+                    The most powerful opportunities in the world are created when the right people meet at the right moment. Yet discovering those opportunities remains surprisingly difficult. We are building Cocpit to change that. By combining artificial intelligence with professional networking, we're creating a platform that doesn't just connect professionals it actively helps professionals unlock their next opportunity, scale and grow their business. We are building an AI that not only suggests, but executes all the tasks for you.
                 </div>
             </div>
 
@@ -318,7 +318,7 @@ const AboutInfo = () => (
                     <span className="text-indigo-500 text-xl font-medium font-sans leading-6"> Difference</span>
                 </div>
                 <div className="w-full text-center text-zinc-600 text-xs font-normal font-sans leading-4">
-                    Everything you do on Cocpit is powered by artificial intelligence. From crafting the perfect profile and discovering relevant connections to matching opportunities and facilitating meaningful conversations – our AI works behind the scenes to make your professional journey smoother, smarter, and more successful.
+                    Cocpit is an AI-powered professional platform that helps entrepreneurs, professionals, startups, and businesses discover opportunities, build meaningful networks, and take action faster. Unlike traditional business networking platforms that only provide information, Cocpit combines AI-driven business intelligence, workflow automation, strategic recommendations, and execution support to help users identify growth opportunities, analyze business performance, streamline operations, and accelerate career and business growth. Whether you're building a startup, expanding your professional network, scaling a business, or advancing your career, Cocpit acts as an intelligent AI partner that transforms insights into action. The future of professional networking isn't about having more tools—it's about having AI that helps you get things done.
                 </div>
             </div>
         </div>
