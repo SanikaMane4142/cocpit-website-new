@@ -1,23 +1,20 @@
 import React from 'react';
 
-const FeatureBlock = ({ title, description, items }: { title: React.ReactNode, description: React.ReactNode, items?: string[] }) => (
-  <div className="w-full flex flex-col lg:flex-row justify-center lg:justify-start items-center lg:items-start gap-4 lg:gap-10 py-0 lg:py-12">
-    <h2 className="w-full lg:w-96 text-center lg:text-left text-base lg:text-3xl font-medium font-sans leading-5 lg:leading-10 text-zinc-950">
+const FeatureBlock = ({ title, description, items, hideBullets }: { title: React.ReactNode, description: React.ReactNode, items?: string[], hideBullets?: boolean }) => (
+  <div className="w-full flex flex-col lg:flex-row justify-start lg:justify-start items-start lg:items-start gap-4 lg:gap-10 py-0 lg:py-12">
+    <h2 className="w-full lg:w-96 text-left lg:text-left text-base lg:text-3xl font-medium font-sans leading-5 lg:leading-10 text-zinc-950">
       {title}
     </h2>
-    <div className="w-full lg:flex-1 flex flex-col justify-center lg:justify-start items-center lg:items-start gap-4 lg:gap-6">
-      <div className="w-full max-w-[320px] lg:max-w-none text-center lg:text-left text-zinc-600 text-sm lg:text-base font-normal font-sans leading-5">
+    <div className="w-full lg:flex-1 flex flex-col justify-start lg:justify-start items-start lg:items-start gap-4 lg:gap-6">
+      <div className="w-full max-w-[320px] lg:max-w-none text-left lg:text-left text-zinc-600 text-sm lg:text-base font-normal font-sans leading-5">
         {description}
       </div>
       {items && items.length > 0 && (
-        <div className="w-full max-w-[320px] lg:max-w-[571px] text-center lg:text-left text-zinc-600 text-sm lg:text-base font-normal font-sans leading-5">
+        <ul className={`w-full max-w-[320px] lg:max-w-[571px] text-left lg:text-left text-zinc-600 text-sm lg:text-base font-normal font-sans leading-5 ${hideBullets ? 'list-none pl-0' : 'list-disc pl-5'}`}>
           {items.map((item, idx) => (
-            <React.Fragment key={idx}>
-              {item}
-              {idx < items.length - 1 && <br />}
-            </React.Fragment>
+            <li key={idx}>{item}</li>
           ))}
-        </div>
+        </ul>
       )}
     </div>
   </div>
@@ -167,6 +164,7 @@ export default function Features() {
 
         <FeatureBlock 
           title="Unified AI Ecosystem for Professionals and Businesses"
+          hideBullets={true}
           description={
             <>
               Cocpit combines professional networking, career development, recruitment software, business intelligence, lead generation, workflow automation, and enterprise management into a single AI-powered platform.<br/><br/>
