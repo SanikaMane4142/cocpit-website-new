@@ -8,7 +8,7 @@ const Testimonial = () => (
             {/* Desktop Layout */}
             <div className="hidden lg:flex w-full justify-between items-center">
                 <div className="flex flex-col justify-center items-center relative">
-                    <img className="w-44 h-56 rounded-xl object-cover" src="/yash oswal.png" alt="Yash Oswal" />
+                    <img className="w-44 h-auto rounded-xl object-contain" src="/yash_oswal_!.jpg" alt="Yash Oswal" />
                     <div className="w-44 mt-3 flex flex-col justify-center items-center">
                         <div className="text-black text-base font-semibold leading-5 text-center">Yash Oswal</div>
                         <div className="text-indigo-500 text-base font-semibold leading-5 text-center">Founder & CEO</div>
@@ -23,7 +23,7 @@ const Testimonial = () => (
 
             {/* Mobile Layout */}
             <div className="flex lg:hidden w-64 flex-col justify-start items-center gap-4">
-                <img className="w-28 h-32 rounded-xl object-cover" src="/yash oswal.png" alt="Yash Oswal" />
+                <img className="w-40 h-auto rounded-xl object-contain" src="/yash_oswal_!.jpg" alt="Yash Oswal" />
                 <div className="h-12 inline-flex justify-center items-center gap-4">
                     <div className="w-32 h-16 inline-flex flex-col justify-center items-center">
                         <div className="text-center text-black text-base font-medium font-sans leading-5">Yash Oswal </div>
@@ -43,19 +43,16 @@ const Testimonial = () => (
 
 const teamRows = [
     [
-        { name: "Yash Karvekar", role: "Project Manager", img: "/yash.svg" }
-    ],
-    [
+        { name: "Yash Karvekar", role: "Project Manager", img: "/yash.svg" },
         { name: "Swaroop Manade", role: "Full-Stack Developer", img: "/swaroop.svg" },
         { name: "Harshada Khot", role: "Full-Stack Developer", img: "/harshada.svg" },
-        { name: "Shubham Patil", role: "Full-Stack Developer", img: "/SHUBHAM_PATIL.svg" },
-        { name: "Mahesh Khamkar", role: "Flutter Developer", img: "/mahesh.svg" }
+        { name: "Shubham Patil", role: "Full-Stack Developer", img: "/SHUBHAM_PATIL.svg" }
     ],
     [
+        { name: "Mahesh Khamkar", role: "Flutter Developer", img: "/mahesh.svg" },
         { name: "Sakshi Patil", role: "Flutter Developer", img: "/sakshi.svg" },
         { name: "Akshay Gandal", role: "IOS Developer", img: "/akshay.svg" },
-        { name: "Nikhil Shinde", role: "IOS Developer", img: "/nikhil.svg" },
-        { name: "Harshad Pawar", role: "AI Developer", img: "/harshad.svg" }
+        { name: "Nikhil Shinde", role: "IOS Developer", img: "/nikhil.svg" }
     ],
     [
         { name: "Sanika Mane", role: "AI Developer", img: "/sanika.svg" },
@@ -77,7 +74,7 @@ const FullTeamSection = () => {
         </div>
     );
 
-    const SHOW_TEAM = false; // Toggle to true to show the team grid again
+    const SHOW_TEAM = true; // Toggle to true to show the team grid again
     const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
     const [isMounted, setIsMounted] = useState(false);
 
@@ -197,14 +194,8 @@ const FullTeamSection = () => {
             {/* Desktop Full Grid */}
             <div className="hidden lg:flex w-[1440px] px-32 flex-col gap-10 mt-10">
                 {teamRows.map((row, rowIndex) => (
-                    <div key={rowIndex} className={`w-full flex justify-center ${rowIndex === 0 ? 'items-center' : 'gap-4'}`}>
-                        {rowIndex === 0 ? (
-                            <div className="w-1/4">
-                                <MemberCard member={row[0]} />
-                            </div>
-                        ) : (
-                            row.map(m => <MemberCard key={m.name} member={m} />)
-                        )}
+                    <div key={rowIndex} className="w-full flex justify-center gap-4">
+                        {row.map(m => <MemberCard key={m.name} member={m} />)}
                     </div>
                 ))}
             </div>

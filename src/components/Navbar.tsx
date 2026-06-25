@@ -9,7 +9,7 @@ const WaitlistModal = ({ onClose }: { onClose: () => void }) => {
 
   useEffect(() => {
     setIsMounted(true);
-    const targetDate = new Date('2026-06-28T00:00:00').getTime();
+    const targetDate = new Date('2026-08-08T00:00:00').getTime();
     const updateCountdown = () => {
       const now = new Date().getTime();
       const difference = targetDate - now;
@@ -50,7 +50,7 @@ const WaitlistModal = ({ onClose }: { onClose: () => void }) => {
         </div>
 
         <div className="w-full text-gray-400 text-sm md:text-base text-center mb-8 font-sans relative z-10">
-          We are getting things ready for you. Mark your calendars for June 28th!
+          We are getting things ready for you. Mark your calendars for August 8th!
         </div>
 
         {/* Mini Countdown */}

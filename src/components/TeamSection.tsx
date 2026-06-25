@@ -10,13 +10,13 @@ const allMembers = [
   { name: "Sakshi Patil", role: "Flutter Developer", img: "/sakshi.svg" },
   { name: "Akshay Gandal", role: "IOS Developer", img: "/akshay.svg" },
   { name: "Nikhil Shinde", role: "IOS Developer", img: "/nikhil.svg" },
-  { name: "Harshad Pawar", role: "AI Developer", img: "/harshad.svg" },
+  // { name: "Harshad Pawar", role: "AI Developer", img: "/harshad.svg" },
   { name: "Sanika Mane", role: "AI Developer", img: "/sanika.svg" },
   { name: "Priyansh Devada", role: "UI/UX Designer", img: "/priyansh.svg" }
 ];
 
 export const TeamSection = () => {
-  const SHOW_TEAM = false; // Toggle to true to show the team slider again
+  const SHOW_TEAM = true; // Toggle to true to show the team slider again
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   const infiniteMembers = [...allMembers, ...allMembers, ...allMembers];
