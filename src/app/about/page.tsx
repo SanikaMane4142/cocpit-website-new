@@ -8,7 +8,7 @@ const Testimonial = () => (
             {/* Desktop Layout */}
             <div className="hidden lg:flex w-full justify-between items-center">
                 <div className="flex flex-col justify-center items-center relative">
-                    <img className="w-44 h-auto rounded-xl object-contain" src="/yash_oswal_!.jpg" alt="Yash Oswal" />
+                    <img className="w-44 h-auto rounded-xl object-contain" src="/yash_oswal_founder.svg" alt="Yash Oswal" />
                     <div className="w-44 mt-3 flex flex-col justify-center items-center">
                         <div className="text-black text-base font-semibold leading-5 text-center">Yash Oswal</div>
                         <div className="text-indigo-500 text-base font-semibold leading-5 text-center">Founder & CEO</div>
@@ -23,7 +23,7 @@ const Testimonial = () => (
 
             {/* Mobile Layout */}
             <div className="flex lg:hidden w-64 flex-col justify-start items-center gap-4">
-                <img className="w-40 h-auto rounded-xl object-contain" src="/yash_oswal_!.jpg" alt="Yash Oswal" />
+                <img className="w-40 h-auto rounded-xl object-contain" src="/yash_oswal_founder.svg" alt="Yash Oswal" />
                 <div className="h-12 inline-flex justify-center items-center gap-4">
                     <div className="w-32 h-16 inline-flex flex-col justify-center items-center">
                         <div className="text-center text-black text-base font-medium font-sans leading-5">Yash Oswal </div>

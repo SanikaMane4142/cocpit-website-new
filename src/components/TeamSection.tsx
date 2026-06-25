@@ -23,6 +23,7 @@ export const TeamSection = () => {
   const [currentIndex, setCurrentIndex] = useState(allMembers.length + 1);
   const [isTransitioning, setIsTransitioning] = useState(true);
   const [isMounted, setIsMounted] = useState(false);
+  const isAutoScrolling = React.useRef(false);
 
   React.useEffect(() => {
     if (SHOW_TEAM) return;
@@ -140,7 +141,11 @@ export const TeamSection = () => {
   React.useEffect(() => {
     const timer = setInterval(() => {
       setIsTransitioning(true);
+      isAutoScrolling.current = true;
       setCurrentIndex((prev) => prev + 1);
+      setTimeout(() => {
+        isAutoScrolling.current = false;
+      }, 800); // wait longer than smooth scroll duration
     }, 3000);
     return () => clearInterval(timer);
   }, []);
@@ -290,14 +295,15 @@ export const TeamSection = () => {
                 paddingRight: 'calc(50% - 160px)'
               }}
               onScroll={(e) => {
+                 if (isAutoScrolling.current) return;
                  const scrollLeft = e.currentTarget.scrollLeft;
                  const newIndex = Math.round(scrollLeft / 336);
-                 if (newIndex !== currentIndex && newIndex >= 0 && newIndex < allMembers.length) {
+                 if (newIndex !== currentIndex && newIndex >= 0 && newIndex < infiniteMembers.length) {
                     setCurrentIndex(newIndex);
                  }
               }}
             >
-              {allMembers.map((m, idx) => (
+              {infiniteMembers.map((m, idx) => (
                 <MobileMemberCard key={`mob-${m.name}-${idx}`} member={m} index={idx} />
               ))}
             </div>
