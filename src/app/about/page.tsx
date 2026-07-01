@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 const Testimonial = () => (
     <section className="pt-[151px] lg:pt-40 pb-0 lg:pb-20 relative flex justify-center items-center px-6 lg:px-0">
-        <div className="w-full max-w-[1171px] lg:h-96  rounded-2xl px-16 py-12 flex flex-col lg:flex-row justify-center items-center gap-4 lg:gap-[10px]">
+        <div className="w-full 9max-w-[1171px] lg:h-96  rounded-2xl px-16 py-12 flex flex-col lg:flex-row justify-center items-center gap-4 lg:gap-[10px]">
 
             {/* Desktop Layout */}
             <div className="hidden lg:flex w-full justify-between items-center">
@@ -79,7 +79,13 @@ const FullTeamSection = () => {
     const [isMounted, setIsMounted] = useState(false);
 
     const [showAllMobile, setShowAllMobile] = useState(false);
-    const mobileMembersToShow = showAllMobile ? allMembers : teamRows[1];
+    const defaultMobileMembers = [
+        { name: "Yash Karvekar", role: "Project Manager", img: "/yash.svg" },
+        { name: "Shubham Patil", role: "Full-Stack Developer", img: "/SHUBHAM_PATIL.svg" },
+        { name: "Swaroop Manade", role: "Full-Stack Developer", img: "/swaroop.svg" },
+        { name: "Nikhil Shinde", role: "IOS Developer", img: "/nikhil.svg" }
+    ];
+    const mobileMembersToShow = showAllMobile ? allMembers : defaultMobileMembers;
 
     useEffect(() => {
         setIsMounted(true);
