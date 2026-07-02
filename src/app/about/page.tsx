@@ -3,18 +3,18 @@ import { useState, useEffect } from 'react';
 
 const Testimonial = () => (
     <section className="pt-[151px] lg:pt-40 pb-0 lg:pb-20 relative flex justify-center items-center px-6 lg:px-0">
-        <div className="w-full 9max-w-[1171px] lg:h-96  rounded-2xl px-16 py-12 flex flex-col lg:flex-row justify-center items-center gap-4 lg:gap-[10px]">
+        <div className="w-full max-w-[1171px] mx-auto lg:h-96 bg-[#F8FAFC]/60 backdrop-blur-sm border border-indigo-50/50 shadow-[0px_8px_30px_rgba(99,102,241,0.02)] rounded-2xl px-8 lg:px-16 py-12 flex flex-col lg:flex-row justify-center items-center gap-4 lg:gap-[10px]">
 
             {/* Desktop Layout */}
-            <div className="hidden lg:flex w-full justify-between items-center">
-                <div className="flex flex-col justify-center items-center relative">
+            <div className="hidden lg:flex w-full justify-center items-center gap-16 lg:gap-24">
+                <div className="flex flex-col justify-center items-center relative flex-shrink-0">
                     <img className="w-44 h-auto rounded-xl object-contain" src="/yash_oswal_founder.svg" alt="Yash Oswal" />
                     <div className="w-44 mt-3 flex flex-col justify-center items-center">
                         <div className="text-black text-base font-semibold leading-5 text-center">Yash Oswal</div>
                         <div className="text-indigo-500 text-base font-semibold leading-5 text-center">Founder & CEO</div>
                     </div>
                 </div>
-                <div className="w-[593px] h-40">
+                <div className="w-[593px]">
                     <span className="text-zinc-600 text-2xl font-medium leading-8">The greatest luxury in business isn't money. It's time. </span>
                     <span className="text-black text-2xl font-medium leading-8">Cocpit gives you both.</span>
                     <span className="text-zinc-600 text-2xl font-medium leading-8"> One platform. Infinite possibilities.</span>
@@ -22,18 +22,16 @@ const Testimonial = () => (
             </div>
 
             {/* Mobile Layout */}
-            <div className="flex lg:hidden w-64 flex-col justify-start items-center gap-4">
-                <img className="w-40 h-auto rounded-xl object-contain" src="/yash_oswal_founder.svg" alt="Yash Oswal" />
-                <div className="h-12 inline-flex justify-center items-center gap-4">
-                    <div className="w-32 h-16 inline-flex flex-col justify-center items-center">
-                        <div className="text-center text-black text-base font-medium font-sans leading-5">Yash Oswal </div>
-                        <div className="text-center text-zinc-600 text-sm font-normal font-sans leading-5">Founder & CEO</div>
-                    </div>
+            <div className="flex lg:hidden w-full max-w-sm flex-col justify-start items-center gap-5">
+                <img className="w-44 h-auto rounded-xl object-contain" src="/yash_oswal_founder.svg" alt="Yash Oswal" />
+                <div className="flex flex-col justify-center items-center gap-1">
+                    <div className="text-center text-black text-base font-semibold font-sans leading-5">Yash Oswal</div>
+                    <div className="text-center text-indigo-500 text-sm font-semibold font-sans leading-5">Founder & CEO</div>
                 </div>
-                <div className="text-center">
-                    <span className="text-zinc-600 text-xs font-medium font-sans leading-[130%]">The greatest luxury in business isn't money. It's time. </span>
-                    <span className="text-black text-xs font-medium font-sans leading-[130%]">Cocpit gives you both.</span>
-                    <span className="text-zinc-600 text-xs font-medium font-sans leading-[130%]"> One platform. Infinite possibilities.</span>
+                <div className="text-center text-zinc-600 text-sm font-medium font-sans leading-relaxed px-2">
+                    <span>The greatest luxury in business isn't money. It's time. </span>
+                    <span className="text-black font-semibold">Cocpit gives you both.</span>
+                    <span> One platform. Infinite possibilities.</span>
                 </div>
             </div>
 
